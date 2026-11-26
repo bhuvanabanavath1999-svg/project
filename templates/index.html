@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tablet Reminder Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body class="dashboard-page" data-username="{{ username }}">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">💙</div>
+            <h2>Tablet<br>Reminder</h2>
+            <p>Take Your Medicine<br>On Time</p>
+        </div>
+
+        <nav class="side-nav">
+            <a href="#home" class="active">⌂ &nbsp; Dashboard</a>
+            <a href="#add">＋ &nbsp; Add Medicine</a>
+            <a href="#calendar">▦ &nbsp; Calendar</a>
+            <a href="#reminders">♧ &nbsp; My Reminders</a>
+            <a href="#stock">💊 &nbsp; Tablet Stock</a>
+            <a href="#history">📋 &nbsp; Medicine History</a>
+        </nav>
+
+        <div class="sidebar-message">
+            <div>💊</div>
+            <h3>Healthy Life</h3>
+            <h3>Happy Life</h3>
+            <p>Take care of yourself!</p>
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="logout-link">
+            ↪ &nbsp; Logout
+        </a>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="home">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Manage your medicine schedule easily.</p>
+            </div>
+
+            <button type="button" id="themeToggle"
+                    class="theme-toggle"
+                    aria-label="Switch to dark mode">
+                🌙 Dark Mode
+            </button>
+
+            <div class="user-profile">
+                <span class="user-icon">👤</span>
+                <strong>Welcome, {{ username }}!</strong>
+            </div>
+
+        </header>
+
+        <!-- WELCOME BANNER -->
+        <section class="welcome-banner">
+
+            <div class="welcome-text">
+
+                <span class="banner-label">
+                    YOUR HEALTH MATTERS
+                </span>
+
+                <h2>Welcome back, {{ username }}!</h2>
+
+                <p>
+                    Stay healthy and never miss your medicine.
+                    Keep your daily medicine schedule organized.
+                </p>
+
+                <a href="#add" class="banner-button">
+                    ♡ &nbsp; Set a Reminder
+                </a>
+
+            </div>
+
+            
+<!-- MEDICINE ANIMATION -->
+<div class="banner-image">
+  <div class="medicine-animation">
+
+    <div class="animation-sparkle sparkle-one">✦</div>
+    <div class="animation-sparkle sparkle-two">✧</div>
+
+    <div class="animated-person">
+      <div class="person-head">
+        <div class="person-hair"></div>
+        <div class="person-eyes">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="person-smile"></div>
+      </div>
+
+      <div class="person-body"></div>
+
+      <div class="person-arm"></div>
+
+      <div class="person-hand">
+        <span class="animated-tablet">💊</span>
+      </div>
+    </div>
+
+    <div class="animated-water-glass">
+      <div class="glass-water"></div>
+      <span class="water-drop">💧</span>
+    </div>
+
+    <div class="animation-message">
+      Stay Healthy!
+    </div>
+
+  </div>
+</div>
+ </section>
+
+        <!-- STATISTICS -->
+        <section class="stats">
+
+            <div class="stat-card total-card">
+                <div class="stat-icon">💊</div>
+                <div>
+                    <h2 id="totalReminders">0</h2>
+                    <p>Total Reminders</p>
+                </div>
+            </div>
+
+            <div class="stat-card completed-card">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <h2 id="completedReminders">0</h2>
+                    <p>Completed</p>
+                </div>
+            </div>
+
+            <div class="stat-card upcoming-card">
+                <div class="stat-icon">◷</div>
+                <div>
+                    <h2 id="upcomingReminders">0</h2>
+                    <p>Upcoming</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- DASHBOARD GRID -->
+        <section class="dashboard-grid">
+
+            <!-- ADD MEDICINE -->
+            <div class="panel add-panel" id="add">
+
+                <div class="panel-title">
+                    <span>＋</span>
+                    <h2>Add Medicine Reminder</h2>
+                </div>
+
+                <form id="reminderForm">
+
+                    <label for="medicine">Medicine Name</label>
+
+                    <input
+                        type="text"
+                        id="medicine"
+                        placeholder="e.g. Paracetamol"
+                        required
+                    >
+
+                    <div class="form-row">
+
+                        <div>
+                            <label for="time">Time</label>
+                            <input
+                                type="time"
+                                id="time"
+                                required
+                            >
+                        </div>
+
+                        <div>
+                            <label for="date">Date</label>
+                            <input
+                                type="date"
+                                id="date"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <label for="repeat">Repeat Reminder</label>
+
+                    <select id="repeat">
+                        <option value="once">Once</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+
+                    <button type="submit" class="primary-button">
+                        ＋ Add Reminder
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- MY REMINDERS -->
+            <div class="panel reminders-panel" id="reminders">
+
+                <div class="panel-title">
+                    <span>♧</span>
+                    <h2>My Reminders</h2>
+                </div>
+
+                <input
+                    type="text"
+                    id="searchReminder"
+                    placeholder="Search medicine..."
+                >
+
+                <select id="filterReminder">
+                    <option value="all">All Reminders</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+
+                <div id="reminderList"></div>
+
+            </div>
+
+            <!-- CALENDAR -->
+            <div class="panel calendar-panel" id="calendar">
+
+                <div class="panel-title">
+                    <span>▦</span>
+                    <h2>Calendar</h2>
+                </div>
+
+                <label for="calendarDate">Choose a date</label>
+
+                <input
+                    type="date"
+                    id="calendarDate"
+                >
+
+                <div id="calendarReminders">
+                    No reminders for this date.
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TABLET STOCK -->
+        <section class="panel stock-panel" id="stock">
+
+            <div class="panel-title">
+                <span>💊</span>
+                <h2>Tablet Stock Management</h2>
+            </div>
+
+            <p>Manage your available tablet quantities.</p>
+
+            <form id="stockForm">
+
+                <label for="stockMedicineName">
+                    Medicine Name
+                </label>
+
+                <input
+                    type="text"
+                    id="stockMedicineName"
+                    placeholder="Enter medicine name"
+                    required
+                >
+
+                <label for="stockQuantity">
+                    Available Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="stockQuantity"
+                    min="0"
+                    placeholder="Enter quantity"
+                    required
+                >
+                <label for="stockExpiryDate">
+    Expiry Date
+</label>
+
+<input
+    type="date"
+    id="stockExpiryDate"
+    required
+>
+
+                <button type="submit" class="primary-button">
+                    ＋ Add / Update Stock
+                </button>
+
+            </form>
+
+            <div id="stockMessage"></div>
+
+            <div id="stockList"></div>
+
+        </section>
+
+        <!-- MEDICINE HISTORY -->
+        <section class="panel history-panel" id="history">
+
+            <div class="panel-title">
+                <span>📋</span>
+                <h2>Medicine History</h2>
+            </div>
+
+            <p>
+                View the reminders you have marked as completed.
+            </p>
+
+            <div id="historyList">
+                <p>No completed reminders yet.</p>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="dashboard-footer">
+
+            <span class="heart">♥</span>
+
+            <strong>Tablet Reminder</strong>
+
+            <p>Take care. Live healthy.</p>
+
+            <div>
+                <span id="currentTime"></span>
+                <span id="currentDate"></span>
+            </div>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,1638 @@
+
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7fc;
+    color: #183b65;
+}
+
+
+/* =====================================
+   LOGIN AND REGISTER PAGE STYLES
+===================================== */
+
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #d9edff, #eff7ff);
+}
+
+.auth-container {
+    width: 850px;
+    max-width: 95%;
+    min-height: 480px;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 50, 100, 0.12);
+}
+
+.auth-left {
+    width: 45%;
+    padding: 45px;
+    background: #183b65;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-left h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.auth-left p {
+    line-height: 1.7;
+    color: #d9eaff;
+}
+
+.auth-right {
+    width: 55%;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-right h2 {
+    margin-bottom: 25px;
+    color: #183b65;
+}
+
+.auth-right label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.auth-right input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #ccdbea;
+    border-radius: 9px;
+    outline: none;
+}
+
+.auth-right input:focus {
+    border-color: #318bc5;
+}
+
+.auth-right button {
+    width: 100%;
+    padding: 13px;
+    background: #247eb8;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.auth-right button:hover {
+    background: #185e91;
+}
+
+.auth-link {
+    margin-top: 18px;
+    text-align: center;
+    color: #247eb8;
+    text-decoration: none;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #fff0e8;
+    color: #a64b20;
+    border-radius: 8px;
+}
+
+
+/* =====================================
+   DASHBOARD SIDEBAR
+===================================== */
+
+.dashboard-page {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 245px;
+    min-width: 245px;
+    background: #183b65;
+    color: white;
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.brand {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.brand-logo {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.brand h2 {
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.brand p {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #c6d9ed;
+    line-height: 1.6;
+}
+
+
+/* SIDEBAR NAVIGATION */
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.side-nav a {
+    color: #dcecff;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+    background: #2b5b8b;
+    color: white;
+}
+
+
+/* SIDEBAR MESSAGE */
+
+.sidebar-message {
+    margin-top: auto;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 20px 10px;
+    background: #244d78;
+    border-radius: 15px;
+}
+
+.sidebar-message div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.sidebar-message h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.sidebar-message p {
+    font-size: 12px;
+    color: #c6d9ed;
+    margin-top: 8px;
+}
+
+
+/* LOGOUT */
+
+.logout-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 10px;
+    background: #244d78;
+    text-align: center;
+}
+
+.logout-link:hover {
+    background: #315f8e;
+}
+
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 30px;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.topbar h1 {
+    font-size: 28px;
+    color: #183b65;
+}
+
+.topbar p {
+    color: #8294a8;
+    margin-top: 7px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 50, 100, 0.06);
+}
+
+.user-icon {
+    font-size: 22px;
+}
+
+
+/* =====================================
+   WELCOME BANNER
+===================================== */
+
+.welcome-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 280px;
+    padding: 35px 40px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: linear-gradient(120deg, #e5f4ff, #cce7fa);
+    box-shadow: 0 8px 25px rgba(30, 90, 140, 0.10);
+}
+
+.welcome-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.banner-label {
+    display: inline-block;
+    color: #2879ad;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.welcome-text h2 {
+    color: #183b65;
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.welcome-text p {
+    color: #55718c;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 22px;
+}
+
+.banner-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 12px;
+    background: #247eb8;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.banner-button:hover {
+    background: #185e91;
+    transform: translateY(-2px);
+}
+
+
+/* MEDICINE PHOTO */
+
+.banner-image {
+    flex: 0 1 330px;
+    height: 230px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(30, 70, 100, 0.15);
+}
+
+.banner-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =====================================
+   STATISTICS CARDS
+===================================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px;
+    border-radius: 17px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 50, 100, 0.05);
+}
+
+.stat-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 25px;
+    background: #e6f3ff;
+}
+
+.stat-card h2 {
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    color: #8294a8;
+    font-size: 13px;
+}
+
+.total-card .stat-icon {
+    background: #e2f2ff;
+}
+
+.completed-card .stat-icon {
+    background: #e2f8ed;
+    color: #279b65;
+}
+
+.upcoming-card .stat-icon {
+    background: #fff2dc;
+    color: #d99528;
+}
+
+
+/* =====================================
+   DASHBOARD GRID
+===================================== */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    box-shadow: 0 5px 20px rgba(0, 50, 100, 0.05);
+}
+
+.panel-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.panel-title span {
+    font-size: 25px;
+    color: #247eb8;
+}
+
+.panel-title h2 {
+    font-size: 19px;
+    color: #183b65;
+}
+
+
+/* =====================================
+   FORM STYLES
+===================================== */
+
+.panel label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #526b84;
+}
+
+.panel input,
+.panel select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 18px;
+    border: 1px solid #dce6ef;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #fbfdff;
+}
+
+.panel input:focus,
+.panel select:focus {
+    border-color: #318bc5;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.primary-button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #247eb8;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-button:hover {
+    background: #185e91;
+}
+
+
+/* =====================================
+   REMINDER ITEMS
+===================================== */
+
+#reminderList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.reminder-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #f3f8fd;
+}
+
+.reminder-item span {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.reminder-item .completed {
+    text-decoration: line-through;
+    color: #8a9aaa;
+}
+
+.reminder-item button {
+    padding: 8px 10px;
+    margin: 3px;
+    border: none;
+    border-radius: 7px;
+    background: #247eb8;
+    color: white;
+    cursor: pointer;
+}
+
+.reminder-item button:hover {
+    background: #185e91;
+}
+
+
+/* =====================================
+   CALENDAR
+===================================== */
+
+.calendar-panel {
+    grid-column: 1 / -1;
+}
+
+#calendarReminders {
+    padding: 15px;
+    background: #f3f8fd;
+    border-radius: 10px;
+    color: #526b84;
+    line-height: 1.8;
+}
+
+#calendarReminders p {
+    padding: 9px;
+    margin-bottom: 7px;
+    border-radius: 7px;
+    background: #e5f2fc;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.dashboard-footer {
+    margin-top: 30px;
+    padding: 22px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    color: #8294a8;
+    font-size: 13px;
+}
+
+.dashboard-footer strong {
+    color: #183b65;
+    margin-left: 7px;
+}
+
+.dashboard-footer p {
+    margin: 8px 0;
+}
+
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-banner {
+        padding: 25px;
+    }
+
+    .banner-image {
+        flex-basis: 250px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-page {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .brand {
+        margin-bottom: 20px;
+    }
+
+    .side-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .side-nav a {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .sidebar-message {
+        display: none;
+    }
+
+    .logout-link {
+        margin-top: 15px;
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .welcome-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px;
+    }
+
+    .welcome-text h2 {
+        font-size: 24px;
+    }
+
+    .banner-image {
+        width: 100%;
+        height: 190px;
+        flex: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-panel {
+        grid-column: auto;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .reminder-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+.banner-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px;
+}
+
+.medicine-illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    background: #ffffff;
+    padding: 25px 35px;
+    border-radius: 20px;
+}
+
+.tablet-emoji,
+.water-emoji {
+    font-size: 75px;
+}
+/* =====================================
+   PURPLE AND LAVENDER COLOUR THEME
+   Keeps your original dashboard layout
+===================================== */
+
+/* Main background */
+body {
+    background: #f3f7fc;
+    color: #35205f;
+}
+
+/* Login and Register */
+.auth-body {
+    background: linear-gradient(135deg, #eee3ff, #faf7ff);
+}
+
+.auth-left {
+    background: #493078;
+}
+
+.auth-right h2 {
+    color: #35205f;
+}
+
+.auth-right input {
+    border-color: #dfd2ef;
+}
+
+.auth-right input:focus {
+    border-color: #8a55c2;
+}
+
+.auth-right button {
+    background: #7040b5;
+}
+
+.auth-right button:hover {
+    background: #542b91;
+}
+
+.auth-link {
+    color: #7040b5;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #493078;
+}
+
+.brand p {
+    color: #dfd2f0;
+}
+
+.side-nav a {
+    color: #eadfff;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+    background: #7952bd;
+    color: white;
+}
+
+.sidebar-message {
+    background: #38245e;
+}
+
+.sidebar-message p {
+    color: #dfd2f0;
+}
+
+/* Logout button */
+.logout-link {
+    background: #38245e;
+}
+
+.logout-link:hover {
+    background: #68409c;
+}
+
+/* Main headings */
+.topbar h1,
+.welcome-text h2,
+.panel-title h2 {
+    color: #35205f;
+}
+
+.topbar p {
+    color: #9285a5;
+}
+
+/* User profile */
+.user-profile {
+    background: white;
+    box-shadow: 0 4px 15px rgba(73, 48, 120, 0.08);
+}
+
+/* Welcome banner */
+.welcome-banner {
+    background: linear-gradient(120deg, #f0e7ff, #dfd0fa);
+    box-shadow: 0 8px 25px rgba(91, 52, 139, 0.10);
+}
+
+.banner-label {
+    color: #7545b4;
+}
+
+.welcome-text p {
+    color: #6d5d83;
+}
+
+.banner-button {
+    background: #7040b5;
+}
+
+.banner-button:hover {
+    background: #542b91;
+}
+
+/* Medicine illustration */
+.banner-image {
+    background: white;
+}
+
+/* Statistics cards */
+.stat-card {
+    background: white;
+    box-shadow: 0 5px 20px rgba(73, 48, 120, 0.07);
+}
+
+.total-card .stat-icon {
+    background: #eee3ff;
+    color: #7040b5;
+}
+
+.completed-card .stat-icon {
+    background: #e2f8ed;
+    color: #279b65;
+}
+
+.upcoming-card .stat-icon {
+    background: #fff2dc;
+    color: #d99528;
+}
+
+/* Dashboard panels */
+.panel {
+    background: white;
+    box-shadow: 0 5px 20px rgba(73, 48, 120, 0.07);
+}
+
+.panel-title span {
+    color: #7040b5;
+}
+
+/* Form fields */
+.panel label {
+    color: #66527e;
+}
+
+.panel input,
+.panel select {
+    border-color: #dfd2ef;
+    background: #fdfbff;
+    color: #35205f;
+}
+
+.panel input:focus,
+.panel select:focus {
+    border-color: #8a55c2;
+}
+
+/* Main buttons */
+.primary-button {
+    background: #7040b5;
+}
+
+.primary-button:hover {
+    background: #542b91;
+}
+
+/* Reminder cards */
+.reminder-item {
+    background: #f6f1fc;
+}
+
+.reminder-item button {
+    background: #7040b5;
+}
+
+.reminder-item button:hover {
+    background: #542b91;
+}
+
+/* Calendar */
+#calendarReminders {
+    background: #f6f1fc;
+    color: #66527e;
+}
+
+#calendarReminders p {
+    background: #eee5fa;
+}
+
+/* Footer */
+.dashboard-footer {
+    background: white;
+    color: #9285a5;
+}
+
+.dashboard-footer strong {
+    color: #35205f;
+}
+/* =====================================
+   DARK MODE BUTTON
+===================================== */
+
+.theme-toggle {
+    padding: 12px 18px;
+    border: 1px solid #d9c5f5;
+    border-radius: 10px;
+    background: #eee3ff;
+    color: #493078;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-toggle:hover {
+    background: #dfd0fa;
+}
+
+/* =====================================
+   DARK MODE THEME
+===================================== */
+
+body.dark-mode {
+    background: #171323;
+    color: #f3eaff;
+}
+
+.dark-mode .main-content {
+    background: #171323;
+}
+
+.dark-mode .topbar h1,
+.dark-mode .welcome-text h2,
+.dark-mode .panel-title h2,
+.dark-mode .stat-card h2,
+.dark-mode .dashboard-footer strong {
+    color: #f3eaff;
+}
+
+.dark-mode .topbar p,
+.dark-mode .welcome-text p,
+.dark-mode .stat-card p {
+    color: #c2b1dc;
+}
+
+.dark-mode .user-profile,
+.dark-mode .stat-card,
+.dark-mode .panel,
+.dark-mode .dashboard-footer {
+    background: #29213b;
+    color: #f3eaff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .welcome-banner {
+    background: linear-gradient(120deg, #382451, #493078);
+}
+
+.dark-mode .banner-label {
+    color: #d7b8ff;
+}
+
+.dark-mode .panel label {
+    color: #d8c9ed;
+}
+
+.dark-mode .panel input,
+.dark-mode .panel select {
+    background: #352b49;
+    border-color: #665080;
+    color: #ffffff;
+}
+
+.dark-mode .panel input::placeholder {
+    color: #c2b1dc;
+}
+
+.dark-mode .reminder-item,
+.dark-mode #calendarReminders {
+    background: #352b49;
+    color: #f3eaff;
+}
+
+.dark-mode #calendarReminders p {
+    background: #49375f;
+    color: #ffffff;
+}
+
+.dark-mode .medicine-illustration,
+.dark-mode .banner-image {
+    background: #ffffff;
+}
+
+.dark-mode .dashboard-footer {
+    border-top: 1px solid #49375f;
+}
+
+.dark-mode .theme-toggle {
+    background: #493078;
+    color: #ffffff;
+    border-color: #7654a5;
+}
+
+.dark-mode .theme-toggle:hover {
+    background: #60418e;
+}
+
+.dark-mode .heart {
+    color: #d7a5ff;
+}
+
+/* =====================================
+   REMINDER CARDS AND ACTION BUTTONS
+===================================== */
+
+#reminderList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reminder-card {
+    padding: 18px;
+    border-radius: 12px;
+    background: #f6f1fc;
+    border: 1px solid #e5d8f5;
+    box-shadow: 0 3px 10px rgba(73, 48, 120, 0.06);
+}
+
+.reminder-card h3 {
+    color: #493078;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.reminder-card p {
+    color: #66527e;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.reminder-card .status-completed {
+    color: #279b65;
+    font-weight: bold;
+}
+
+.reminder-card .status-pending {
+    color: #d99528;
+    font-weight: bold;
+}
+
+.reminder-card.completed {
+    opacity: 0.85;
+}
+
+.reminder-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.reminder-actions button {
+    padding: 9px 16px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.complete-btn {
+    background: #279b65;
+}
+
+.complete-btn:hover {
+    background: #19794d;
+}
+
+.undo-btn {
+    background: #7040b5;
+}
+
+.undo-btn:hover {
+    background: #542b91;
+}
+
+.edit-btn {
+    background: #318bc5;
+}
+
+.edit-btn:hover {
+    background: #226b9c;
+}
+
+.delete-btn {
+    background: #dc5555;
+}
+
+.delete-btn:hover {
+    background: #b93636;
+}
+
+.reminder-actions button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.dark-mode .reminder-card {
+    background: #352b49;
+    border-color: #665080;
+}
+
+.dark-mode .reminder-card h3,
+.dark-mode .reminder-card p {
+    color: #f3eaff;
+}
+.complete-btn {
+    background: #279b65;
+    color: white;
+}
+
+.undo-btn {
+    background: #7040b5;
+    color: white;
+}
+
+.reminder-card.completed {
+    border-left: 5px solid #279b65;
+}
+#reminderForm .primary-button {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    margin-top: 12px;
+    min-height: 45px;
+    background: #7040b5;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+/* EDIT REMINDER FORM */
+.edit-reminder-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.edit-reminder-form input,
+.edit-reminder-form select {
+    display: block;
+    width: 100%;
+}
+
+.edit-reminder-form .reminder-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.edit-reminder-form .save-btn,
+.edit-reminder-form .cancel-btn {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.edit-reminder-form .save-btn {
+    background: #279b65;
+}
+
+.edit-reminder-form .cancel-btn {
+    background: #7040b5;
+}
+/* TABLET STOCK ACTION BUTTONS */
+#stockList button {
+    padding: 9px 16px;
+    margin: 6px 5px 6px 0;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #7650d8, #5030a8);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#stockList button:hover {
+    background: linear-gradient(135deg, #6240bd, #3d238a);
+    transform: translateY(-2px);
+}
+
+#stockList button:active {
+    transform: scale(0.97);
+}
+/* MEDICINE HISTORY POSITION */
+
+.history-panel {
+    margin-top: 22px;
+    width: 100%;
+    min-height: 220px;
+    background: white;
+    padding: 25px;
+    border-radius: 17px;
+    box-shadow: 0 5px 20px rgba(73, 48, 120, 0.07);
+}
+
+.history-panel .panel-title {
+    margin-bottom: 15px;
+}
+
+#historyList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* MEDICINE HISTORY - DASHBOARD POSITION */
+
+.dashboard-grid {
+    grid-template-areas:
+        "add reminders"
+        "history reminders"
+        "calendar calendar";
+}
+
+.add-panel {
+    grid-area: add;
+}
+
+.reminders-panel {
+    grid-area: reminders;
+}
+
+.history-panel {
+    grid-area: history;
+    width: 100%;
+    min-height: 200px;
+    margin: 0;
+}
+
+.calendar-panel {
+    grid-area: calendar;
+}
+
+#historyList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.history-item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px;
+    background: #f6f1fc;
+    border: 1px solid #e5d8f5;
+    border-radius: 10px;
+    color: #493078;
+}
+
+.dark-mode .history-item {
+    background: #352b49;
+    border-color: #665080;
+    color: #f3eaff;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 650px) {
+    .dashboard-grid {
+        grid-template-areas:
+            "add"
+            "reminders"
+            "history"
+            "calendar";
+        grid-template-columns: 1fr;
+    }
+}
+.dashboard-footer {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 25px 15px;
+    margin-top: 30px;
+    text-align: center;
+    visibility: visible !important;
+}
+
+.dashboard-footer div {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#currentTime,
+#currentDate {
+    display: inline-block;
+    color: inherit;
+    font-size: 14px;
+}
+
+/* =====================================
+   CLEAN MEDICINE ANIMATION
+===================================== */
+
+.banner-image {
+    flex: 0 1 330px;
+    width: 330px;
+    height: 230px;
+    min-height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff, #eee8ff);
+}
+
+.medicine-animation {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Character */
+
+.animated-person {
+    position: absolute;
+    width: 125px;
+    height: 175px;
+    left: 65px;
+    bottom: 20px;
+    animation: personFloat 3s ease-in-out infinite;
+}
+
+.person-head {
+    position: absolute;
+    width: 75px;
+    height: 80px;
+    left: 25px;
+    top: 0;
+    background: #f4bd91;
+    border-radius: 48%;
+    z-index: 3;
+}
+
+.person-hair {
+    position: absolute;
+    width: 80px;
+    height: 35px;
+    top: -7px;
+    left: -3px;
+    background: #49312f;
+    border-radius: 50% 50% 20% 20%;
+}
+
+.person-eyes {
+    position: absolute;
+    top: 36px;
+    left: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.person-eyes span {
+    width: 6px;
+    height: 7px;
+    background: #29202a;
+    border-radius: 50%;
+}
+
+.person-smile {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    left: 28px;
+    top: 54px;
+    border-bottom: 3px solid #a34e55;
+    border-radius: 50%;
+}
+
+.person-body {
+    position: absolute;
+    width: 100px;
+    height: 85px;
+    left: 12px;
+    top: 75px;
+    background: #9b7bea;
+    border-radius: 35px 35px 12px 12px;
+}
+
+/* Arm and tablet */
+
+.person-arm {
+    position: absolute;
+    width: 58px;
+    height: 15px;
+    left: 63px;
+    top: 100px;
+    background: #f4bd91;
+    border-radius: 15px;
+    transform-origin: 8px center;
+    animation: handMove 3s ease-in-out infinite;
+    z-index: 4;
+}
+
+.person-hand {
+    position: absolute;
+    left: 105px;
+    top: 85px;
+    z-index: 5;
+    animation: handMove 3s ease-in-out infinite;
+}
+
+.animated-tablet {
+    display: block;
+    font-size: 25px;
+    animation: tabletMove 3s ease-in-out infinite;
+}
+
+/* Water glass */
+
+.animated-water-glass {
+    position: absolute;
+    right: 55px;
+    bottom: 43px;
+    width: 43px;
+    height: 68px;
+    border: 3px solid #78bce8;
+    border-radius: 5px 5px 12px 12px;
+    background: rgba(255,255,255,0.55);
+    overflow: hidden;
+    animation: glassFloat 3s ease-in-out infinite;
+}
+
+.glass-water {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 55%;
+    background: #78c9f5;
+    animation: waterMove 2s ease-in-out infinite alternate;
+}
+
+.water-drop {
+    position: absolute;
+    top: -22px;
+    left: 8px;
+    font-size: 15px;
+    animation: dropMove 3s ease-in-out infinite;
+}
+
+/* Sparkles */
+
+.animation-sparkle {
+    position: absolute;
+    color: #a17bea;
+    font-size: 25px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 25px;
+    left: 45px;
+}
+
+.sparkle-two {
+    top: 55px;
+    right: 35px;
+    animation-delay: 1s;
+}
+
+/* Message */
+
+.animation-message {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #7654bd;
+    font-weight: bold;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* Keyframes */
+
+@keyframes personFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+@keyframes handMove {
+    0%, 20%, 100% { transform: rotate(-25deg); }
+    45%, 65% { transform: rotate(-65deg); }
+}
+
+@keyframes tabletMove {
+    0%, 20%, 100% {
+        transform: translate(0, 0) rotate(0);
+    }
+    45%, 65% {
+        transform: translate(-28px, -25px) rotate(25deg);
+    }
+}
+
+@keyframes glassFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes waterMove {
+    from { height: 45%; }
+    to { height: 60%; }
+}
+
+@keyframes dropMove {
+    0%, 25% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    45% { opacity: 1; }
+    70%, 100% {
+        opacity: 0;
+        transform: translateY(55px);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .banner-image {
+        width: 100%;
+        flex: none;
+    }
+
+    .animated-person {
+        left: calc(50% - 105px);
+    }
+
+    .animated-water-glass {
+        right: calc(50% - 120px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .medicine-animation * {
+        animation: none !important;
+    }
+}

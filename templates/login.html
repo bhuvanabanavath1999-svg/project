@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Tablet Reminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-container">
+
+        <!-- LEFT PANEL -->
+        <div class="auth-left">
+
+            <div class="big-logo">💊</div>
+
+            <h1>Tablet Reminder</h1>
+
+            <p>Your medicine schedule, made simple.</p>
+
+            <div class="medicine-icons">💊 ⏰ 🩹</div>
+
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="auth-right">
+
+            <h2>Login</h2>
+
+            <p class="subtitle">Welcome back!</p>
+
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <p class="flash-message">{{ message }}</p>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('login') }}">
+
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter your username"
+                    required
+                >
+
+                <small>Example: Priya123</small>
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <small>Use the password you created during registration.</small>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p class="auth-link">
+                Don't have an account?
+                <a href="{{ url_for('register') }}">Sign Up</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
